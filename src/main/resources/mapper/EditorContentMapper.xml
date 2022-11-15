@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.myworldspringboot.mapper.EditorContentMapper">
+<!--  保存正在编辑的文章  -->
+    <insert id="saveContent">
+    insert into myworld.editorcontent(editorTitle, editorInfo, startTime, updateTime, state, bgImg, coverImg)
+    values (#{editorTitle},#{editorInfo},#{startTime},#{updateTime},#{state},#{bgImg},#{coverImg});
+    </insert>
+<!--  获取所有正在编辑的文章的信息  -->
+    <select id="getAllContent" resultType="com.example.myworldspringboot.entity.EditorContent">
+        select editorId,editorTitle,editorInfo,startTime,updateTime,state,bgImg,coverImg
+        from myworld.editorcontent;
+    </select>
+<!--  更新正在编辑的文章的内容  -->
+    <update id="updateEditorContent">
+        update editorcontent
+        set editorTitle=#{editorTitle},editorInfo=#{editorInfo},updateTime=#{updateTime},bgImg=#{bgImg},coverImg=#{coverImg}
+        where editorId=#{editorId}
+    </update>
+<!--  发布文章  -->
+    <insert id="publishContent">
+        insert into myworld.contentdata(contentTitle, contentInfo, createTime,bgImg,coverImg)
+        VALUES (#{editorTitle},#{editorInfo},#{publishTime},#{bgImg},#{coverImg});
+    </insert>
+</mapper>

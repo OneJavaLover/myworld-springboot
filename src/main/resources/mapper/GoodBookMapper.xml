@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.myworldspringboot.mapper.GoodBookMapper">
+    <!--按照书名查找句子-->
+    <select id="findSentenceByName" resultType="String">
+        select sentence from goodbook where bookName=#{bookName};
+    </select>
+    <!--查找书名和作者名并去重-->
+    <select id="findBookNameAndAuthNameAndDistinct" resultType="com.example.myworldspringboot.entity.GoodBook">
+        select distinct bookName,authName from goodbook
+    </select>
+    <!--查找书名并去重-->
+    <select id="findBookNameAndDistinct" resultType="String">
+        select distinct bookName from goodbook
+    </select>
+    <!-- 插入新句子 -->
+    <insert id="insertNewSentence">
+        insert into goodbook(bookName, authName, sentence)
+        VALUES (#{bookName},#{authName},#{sentence})
+    </insert>
+</mapper>

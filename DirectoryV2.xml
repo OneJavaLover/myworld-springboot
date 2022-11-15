@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <trees>
+     <tree path="/src/main/java/com/example/myworldspringboot/config" title="配置类"/>
+     <tree path="/src/main/java/com/example/myworldspringboot/controller" title="前后端数据交互层"/>
+     <tree path="/src/main/java/com/example/myworldspringboot/entity" title="实体类"/>
+     <tree path="/src/main/java/com/example/myworldspringboot/filter" title="拦截器"/>
+     <tree path="/src/main/java/com/example/myworldspringboot/interceptor" title="过滤器"/>
+     <tree path="/src/main/java/com/example/myworldspringboot/mapper" title="数据库查询接口"/>
+     <tree path="/src/main/java/com/example/myworldspringboot/realm" title="安全框架自定义配置"/>
+     <tree path="/src/main/java/com/example/myworldspringboot/result" title="返回结果类"/>
+     <tree path="/src/main/java/com/example/myworldspringboot/service" title="数据处理服务层"/>
+     <tree path="/src/main/java/com/example/myworldspringboot/utils" title="工具类"/>
+     <tree path="/src/main/resources/mapper" title="数据库查询语句"/>
+ </trees>
